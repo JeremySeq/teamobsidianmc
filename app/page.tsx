@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedHero from "./components/AnimatedHero";
 import Navbar from "./components/Navbar";
@@ -8,11 +8,22 @@ import Navbar from "./components/Navbar";
 export default function Home() {
   const [showHero, setShowHero] = useState(true);
 
+  useEffect(() => {
+    const hasSeenAnimation = localStorage.getItem("seenAnimation");
+
+    if (hasSeenAnimation) {
+      setShowHero(false);
+    }
+  }, []);
+
+  function handleComplete() {
+    localStorage.setItem("seenAnimation", "true");
+    setShowHero(false);
+  }
+
   return (
     <main className="relative min-h-screen">
-      {showHero && (
-        <AnimatedHero onComplete={() => setShowHero(false)} />
-      )}
+      {showHero && <AnimatedHero onComplete={handleComplete} />}
 
       {!showHero && (
         <motion.nav
@@ -20,9 +31,8 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <Navbar></Navbar>
+          <Navbar />
         </motion.nav>
-
       )}
     </main>
   );
