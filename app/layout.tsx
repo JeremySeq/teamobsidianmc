@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import { Ubuntu } from "next/font/google";
+import NavbarWrapper from "./components/NavbarWrapper";
+import { SplashProvider } from "./SplashContext";
+import { ReactNode } from "react";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -8,20 +10,23 @@ const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Team Obsidian",
-  description: "",
+  description: "Official Team Obsidian website",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={ubuntu.variable}>
       <body className="antialiased">
-        {children}
+        <SplashProvider>
+          <NavbarWrapper />
+          {children}
+        </SplashProvider>
       </body>
     </html>
   );

@@ -1,38 +1,30 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useSplash } from "./SplashContext";
 import AnimatedHero from "./components/AnimatedHero";
-import Navbar from "./components/Navbar";
 
 export default function Home() {
-  const [showHero, setShowHero] = useState(true);
+  const { showSplash, setShowSplash } = useSplash();
 
   useEffect(() => {
-    const hasSeenAnimation = localStorage.getItem("seenAnimation");
-
-    if (hasSeenAnimation) {
-      setShowHero(false);
-    }
-  }, []);
+    const seen = localStorage.getItem("seenAnimation");
+    if (seen) setShowSplash(false);
+  }, [setShowSplash]);
 
   function handleComplete() {
     localStorage.setItem("seenAnimation", "true");
-    setShowHero(false);
+    setShowSplash(false);
   }
 
   return (
-    <main className="relative min-h-screen">
-      {showHero && <AnimatedHero onComplete={handleComplete} />}
+    <main className="relative">
+      {showSplash && <AnimatedHero onComplete={handleComplete} />}
 
-      {!showHero && (
-        <motion.nav
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <Navbar />
-        </motion.nav>
+      {!showSplash && (
+        <div>
+          
+        </div>
       )}
     </main>
   );
