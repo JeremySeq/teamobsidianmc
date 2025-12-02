@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedHero from "./components/AnimatedHero";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   const [showHero, setShowHero] = useState(true);
@@ -14,17 +15,14 @@ export default function Home() {
       )}
 
       {!showHero && (
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative z-10 p-20"
+        <motion.nav
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-4xl font-bold">Welcome to Team Obsidian</h1>
-          <p className="mt-6 text-gray-300">
-            CONTENT
-          </p>
-        </motion.section>
+          <Navbar></Navbar>
+        </motion.nav>
+
       )}
     </main>
   );

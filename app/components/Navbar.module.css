@@ -1,0 +1,32 @@
+.navbar {
+  position: absolute;
+  top: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: var(--space-2xl);
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+  padding: 4px 0;
+  font-size: var(--font-lg);
+}
+
+.menu a:hover {
+  color: var(--obsidian-purple-light);
+}
