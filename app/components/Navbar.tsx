@@ -11,8 +11,8 @@ export default function Navbar() {
           <Link href="/"><img
             src="/logo.png"
             alt="Team Obsidian Logo"
-            width={150}
-            height={150}
+            width={175}
+            height={175}
           /></Link>
         </div>
 

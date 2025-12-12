@@ -5,9 +5,9 @@
 :root {
   --obsidian-black: #0b0b0f;
   --obsidian-deep: #111118;
-  --obsidian-purple: #6a2ca8;
-  --obsidian-purple-light: #9b4dff;
-  --obsidian-purple-glow: #b084ff;
+  --obsidian-purple: #8a41d3;
+  --obsidian-purple-light: #9a59ee;
+  --obsidian-purple-glow: #b692f7;
 
   --text-main: #e8e8f0;
   --text-muted: #9a9ab3;
@@ -46,10 +46,54 @@
   --radius: 12px;
 }
 
+@theme inline {
+  --color-*: initial;
+
+  --color-obsidian-black: var(---obsidian-black);
+  --color-obsidian-deep: var(--obsidian-deep);
+  --color-obsidian-purple: var(--obsidian-purple);
+  --color-obsidian-purple-light: var(--obsidian-purple-light);
+  --color-obsidian-purple-glow: var(--obsidian-purple-glow);
+
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+
+  --color-accent-glow: var(--accent-glow);
+}
+
 body {
   background: var(--obsidian-black);
   color: var(--text-main);
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.cta-button {
+  background-color: var(--obsidian-purple);
+  transition: background-color var(--fast), box-shadow var(--fast);
+  cursor: pointer;
+  border: 3px solid var(--obsidian-purple-light);
+}
+
+.cta-button:hover {
+  background-color: var(--obsidian-purple-light);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--obsidian-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-glow);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--obsidian-purple);
 }
