@@ -28,7 +28,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="max-w-6xl mx-auto px-4 py-16">
+          <div className="max-w-6xl mx-auto px-4 py-8">
             <h1 className="text-5xl font-bold text-center mb-4">Welcome to Team Obsidian</h1>
             <p className="text-center text-xl text-slate-300 mb-12">
               Explore our mods and meet the team behind them.
