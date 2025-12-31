@@ -49,7 +49,7 @@
 @theme inline {
   --color-*: initial;
 
-  --color-obsidian-black: var(---obsidian-black);
+  --color-obsidian-black: var(--obsidian-black);
   --color-obsidian-deep: var(--obsidian-deep);
   --color-obsidian-purple: var(--obsidian-purple);
   --color-obsidian-purple-light: var(--obsidian-purple-light);
@@ -71,7 +71,7 @@ body {
 
 .cta-button {
   background-color: var(--obsidian-purple);
-  transition: background-color var(--fast), box-shadow var(--fast);
+  transition: all var(--fast);
   cursor: pointer;
   border: 3px solid var(--obsidian-purple-light);
 }
@@ -79,6 +79,7 @@ body {
 .cta-button:hover {
   background-color: var(--obsidian-purple-light);
   box-shadow: 0 0 30px var(--accent-glow);
+  transform: scale(1.025);
 }
 
 ::-webkit-scrollbar {

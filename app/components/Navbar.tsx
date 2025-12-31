@@ -26,6 +26,9 @@ export default function Navbar() {
           <li>
             <Link href="/mods">Mods</Link>
           </li>
+          <li>
+            <Link href="/gallery">Gallery</Link>
+          </li>
         </ul>
       </div>
     </nav>

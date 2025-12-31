@@ -35,9 +35,15 @@ export default function Home() {
             </p>
 
             <div className="text-center">
-              <button className="cta-button text-white font-bold py-3 px-8 rounded-full text-2xl mb-15">
-                Join Our Discord
-              </button>
+              <a
+                href="https://discord.gg/EPUJCmYrcb"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="cta-button text-white font-bold py-3 px-8 rounded-full text-2xl mb-15">
+                  Join Our Discord
+                </button>
+              </a>
             </div>
 
             <section className="">
