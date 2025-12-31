@@ -47,7 +47,6 @@
 }
 
 @theme inline {
-  --color-*: initial;
 
   --color-obsidian-black: var(--obsidian-black);
   --color-obsidian-deep: var(--obsidian-deep);
